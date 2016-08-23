@@ -1,5 +1,6 @@
 package com.example.allfree.conotan_bootstrap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,23 +10,32 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
+        parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendActivity.class);
+                startActivity(intent);
             }
         });
+        BootstrapButton child_button = (BootstrapButton)findViewById(R.id.child);
+        child_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
