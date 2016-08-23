@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:text="送信しました"
-        android:textColor="@color/colorActionBar"
+        android:textColor="@color/textColor"
         android:textSize="100sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
