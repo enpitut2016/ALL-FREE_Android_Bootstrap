@@ -9,19 +9,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.allfree.conotan_bootstrap.SendActivity"
-    tools:showIn="@layout/activity_send">
+    tools:context="com.example.allfree.conotan_bootstrap.FinishedSendingActivity"
+    tools:showIn="@layout/activity_finished_sending">
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:id="@+id/send"
-        app:bootstrapBrand="warning"
-        app:bootstrapText="送る {fa-paper-plane-o}"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="送信しました"
+        android:textColor="@color/textColor"
+        android:textSize="100sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

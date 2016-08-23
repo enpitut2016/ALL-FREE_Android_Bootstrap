@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ALL-FREE_Android_Bootstrap.iml" filepath="$PROJECT_DIR$/ALL-FREE_Android_Bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Conotan_Bootstrap.iml" filepath="$PROJECT_DIR$/Conotan_Bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
