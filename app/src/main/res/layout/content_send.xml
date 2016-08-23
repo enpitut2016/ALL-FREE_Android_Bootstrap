@@ -13,10 +13,10 @@
     tools:showIn="@layout/activity_send">
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="500px"
-        android:layout_height="300px"
+        android:layout_width="400px"
+        android:layout_height="200px"
         android:id="@+id/send"
-        app:bootstrapBrand="success"
+        app:bootstrapBrand="warning"
         app:bootstrapText="送る {fa-paper-plane-o}"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
