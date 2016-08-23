@@ -30,6 +30,7 @@
             android:name=".HelpDetailActivity"
             android:label="@string/title_activity_help_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RememberActivity"></activity>
     </application>
 
 </manifest>
