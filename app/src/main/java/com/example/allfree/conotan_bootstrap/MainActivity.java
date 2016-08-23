@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
+        parent_button.setTextSize(70);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         BootstrapButton child_button = (BootstrapButton)findViewById(R.id.child);
+        child_button.setTextSize(70);
         child_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

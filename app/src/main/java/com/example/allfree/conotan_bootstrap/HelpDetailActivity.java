@@ -20,11 +20,30 @@ public class HelpDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
+        parent_button.setTextSize(30);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
                 startActivity(intent);
+            }
+        });
+        BootstrapButton button_ok = (BootstrapButton)findViewById(R.id.button_ok);
+        button_ok.setTextSize(30);
+        button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
+                //startActivity(intent);
+            }
+        });
+        BootstrapButton button_wakaranai = (BootstrapButton)findViewById(R.id.button_wakaranai);
+        button_wakaranai.setTextSize(30);
+        button_wakaranai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
+                //startActivity(intent);
             }
         });
 

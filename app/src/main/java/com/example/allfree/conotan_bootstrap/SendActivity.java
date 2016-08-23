@@ -19,6 +19,7 @@ public class SendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send);
 
         BootstrapButton send_button = (BootstrapButton)findViewById(R.id.send);
+        send_button.setTextSize(70);
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

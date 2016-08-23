@@ -25,6 +25,7 @@
             android:padding="8dp"
             android:text="言ったことあるよ！"
             android:textColor="@android:color/white"
+            android:id="@+id/text"
             android:gravity="center"
             android:textSize="30dp" />
 
