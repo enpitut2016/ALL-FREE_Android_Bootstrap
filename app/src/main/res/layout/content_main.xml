@@ -13,24 +13,24 @@
     tools:showIn="@layout/activity_main">
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:text="教える"
-        app:bootstrapBrand="success"
+        app:bootstrapBrand="warning"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
         app:showOutline="false"
         app:roundedCorners="true"
         android:id="@+id/child"
+        android:layout_marginTop="153dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="113dp" />
+        android:layout_centerHorizontal="true" />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:text="教わる"
-        app:bootstrapBrand="success"
+        app:bootstrapBrand="warning"
         app:bootstrapSize="lg"
         app:buttonMode="regular"
         app:showOutline="false"
@@ -39,6 +39,6 @@
         android:layout_below="@+id/child"
         android:layout_alignLeft="@+id/child"
         android:layout_alignStart="@+id/child"
-        android:layout_marginTop="164dp" />
+        android:layout_marginTop="202dp" />
 
 </RelativeLayout>

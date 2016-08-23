@@ -24,9 +24,12 @@
             android:label="@string/title_activity_send"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".FinishedSendingActivity"
+            android:label="@string/title_activity_finished_sending"/>
+	<activity
             android:name=".HelpDetailActivity"
             android:label="@string/title_activity_help_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
