@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.allfree.conotan_bootstrap">
 
+
     <application
         android:name=".Bootstrap"
         android:allowBackup="true"
