@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
@@ -19,8 +20,12 @@ public class HelpDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        TextView textView = (TextView)findViewById(R.id.helptext);
+        textView.setText("LINEスタンプの使い方教えて");
+        textView.setTextSize(50);
+
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
-        parent_button.setTextSize(30);
+        parent_button.setTextSize(50);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +34,7 @@ public class HelpDetailActivity extends AppCompatActivity {
             }
         });
         BootstrapButton button_ok = (BootstrapButton)findViewById(R.id.button_ok);
-        button_ok.setTextSize(30);
+        button_ok.setTextSize(50);
         button_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +43,7 @@ public class HelpDetailActivity extends AppCompatActivity {
             }
         });
         BootstrapButton button_wakaranai = (BootstrapButton)findViewById(R.id.button_wakaranai);
-        button_wakaranai.setTextSize(30);
+        button_wakaranai.setTextSize(50);
         button_wakaranai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
