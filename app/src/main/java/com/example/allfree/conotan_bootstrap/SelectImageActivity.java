@@ -39,6 +39,7 @@ public class SelectImageActivity extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             // エラー処理
         }
+
         //Bitmapに変換
         Bitmap image = BitmapFactory.decodeStream(input);
         ImageView iv = (ImageView)findViewById(R.id.manual_image);
