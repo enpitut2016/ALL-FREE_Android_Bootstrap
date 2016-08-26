@@ -33,7 +33,7 @@ public class SendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send);
 
         BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
-        send_text.setTextSize(30);
+        send_text.setTextSize(40);
 
         BootstrapButton send_button = (BootstrapButton) findViewById(R.id.send);
         send_button.setTextSize(70);

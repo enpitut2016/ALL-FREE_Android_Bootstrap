@@ -28,7 +28,7 @@ public class FinishedSendingActivity extends AppCompatActivity {
         help_text.setText(data);
 
         BootstrapButton main_button = (BootstrapButton) findViewById(R.id.main);
-        main_button.setTextSize(50);
+        main_button.setTextSize(30);
         main_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
