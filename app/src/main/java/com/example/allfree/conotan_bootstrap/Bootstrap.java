@@ -27,11 +27,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</td>
 
 import android.app.Application;
 import com.beardedhen.androidbootstrap.TypefaceProvider;
+import com.kii.cloud.storage.*;
+import android.app.Application;
+
 
 // Applicationを継承
 public class Bootstrap extends Application {
     @Override public void onCreate() {
         super.onCreate();
         TypefaceProvider.registerDefaultIconSets();
+        Kii.initialize(getApplicationContext(), "87390d87", "30f8461954ccde062351d1a9baa4a0e7", Kii.Site.US, true);
     }
 }
