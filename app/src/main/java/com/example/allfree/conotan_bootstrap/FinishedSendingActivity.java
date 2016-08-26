@@ -37,7 +37,6 @@ public class FinishedSendingActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
 }

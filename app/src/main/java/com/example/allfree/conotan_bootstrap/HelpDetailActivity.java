@@ -17,8 +17,6 @@ public class HelpDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         TextView textView = (TextView)findViewById(R.id.helptext);
         textView.setText("LINEスタンプの使い方教えて");

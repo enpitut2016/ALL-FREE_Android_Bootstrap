@@ -34,6 +34,10 @@
         <activity
             android:name=".ManualListActivity"
             android:label="@string/title_activity_manual_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowManualActivity"
+            android:label="@string/title_activity_show_manual"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
