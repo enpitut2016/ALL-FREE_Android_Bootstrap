@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "482558128806",
+    "project_id": "firebase-konotan"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482558128806:android:1dce9b652457be87",
+        "android_client_info": {
+          "package_name": "com.example.allfree.conotan_bootstrap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Yth2ETTyusiFq3su8AJ_ZP1K_4JLugU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
