@@ -38,10 +38,15 @@ public class HelpDetailActivity extends AppCompatActivity {
         button_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(HelpDetailActivity.this, SelectImageActivity.class);
+                startActivity(intent);
             }
         });
+
+
+
+
+
         BootstrapButton button_wakaranai = (BootstrapButton)findViewById(R.id.button_wakaranai);
         button_wakaranai.setTextSize(50);
         button_wakaranai.setOnClickListener(new View.OnClickListener() {

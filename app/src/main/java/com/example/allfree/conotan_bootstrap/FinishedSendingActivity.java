@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 public class FinishedSendingActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +16,8 @@ public class FinishedSendingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finished_sending);
 
+//        BootstrapButton finish_button = (BootstrapButton)findViewById(R.id.send_finished);
+//        finish_button.setTextSize(50);
 
     }
 
