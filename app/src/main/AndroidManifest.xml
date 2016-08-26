@@ -25,12 +25,16 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FinishedSendingActivity"
-            android:label="@string/title_activity_finished_sending"/>
-	<activity
+            android:label="@string/title_activity_finished_sending" />
+        <activity
             android:name=".HelpDetailActivity"
             android:label="@string/title_activity_help_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RememberActivity"></activity>
+        <activity android:name=".RememberActivity" />
+        <activity
+            android:name=".ManualListActivity"
+            android:label="@string/title_activity_manual_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
