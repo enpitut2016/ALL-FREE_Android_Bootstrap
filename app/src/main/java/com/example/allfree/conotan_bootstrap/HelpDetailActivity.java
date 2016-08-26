@@ -27,7 +27,7 @@ public class HelpDetailActivity extends AppCompatActivity {
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
+                Intent intent = new Intent(HelpDetailActivity.this, ConotanNoticeActivity.class);
                 startActivity(intent);
             }
         });
