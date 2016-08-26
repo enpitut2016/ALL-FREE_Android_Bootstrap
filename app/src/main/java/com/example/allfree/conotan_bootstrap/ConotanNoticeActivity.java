@@ -5,32 +5,35 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 
-import android.content.Intent;
-import android.widget.TextView;
-
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import android.content.Intent;
 
-public class FinishedSendingActivity extends AppCompatActivity {
+public class ConotanNoticeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_finished_sending);
-
-        TextView help_text = (TextView)findViewById(R.id.help_text);
-        Intent intent = getIntent();
-        String data = intent.getStringExtra("help_text");
-        help_text.setText(data);
+        setContentView(R.layout.activity_conotan_notice);
 
         BootstrapButton main_button = (BootstrapButton) findViewById(R.id.main);
-        main_button.setTextSize(30);
+        main_button.setTextSize(35);
         main_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FinishedSendingActivity.this, MainActivity.class);
+                Intent intent = new Intent(ConotanNoticeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        BootstrapButton manual_button = (BootstrapButton) findViewById(R.id.manual);
+        manual_button.setTextSize(35);
+        manual_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConotanNoticeActivity.this, ManualListActivity.class);
                 startActivity(intent);
             }
         });
