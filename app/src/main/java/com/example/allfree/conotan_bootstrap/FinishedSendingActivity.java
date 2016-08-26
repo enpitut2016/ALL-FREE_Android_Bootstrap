@@ -20,6 +20,10 @@ public class FinishedSendingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finished_sending);
 
+
+//        BootstrapButton finish_button = (BootstrapButton)findViewById(R.id.send_finished);
+//        finish_button.setTextSize(50);
+
         TextView help_text = (TextView)findViewById(R.id.help_text);
         Intent intent = getIntent();
         String data = intent.getStringExtra("help_text");
@@ -34,6 +38,7 @@ public class FinishedSendingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 

@@ -32,6 +32,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RememberActivity" />
         <activity
+            android:name=".SelectImageActivity"
+            android:label="@string/title_activity_select_image" />
+	    <activity
             android:name=".ManualListActivity"
             android:label="@string/title_activity_manual_list"
             android:theme="@style/AppTheme.NoActionBar" />

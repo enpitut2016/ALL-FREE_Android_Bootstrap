@@ -12,6 +12,17 @@
     tools:context="com.example.allfree.conotan_bootstrap.FinishedSendingActivity"
     tools:showIn="@layout/activity_finished_sending">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="送信完了！"
+        android:textColor="@color/textColor"
+        android:textSize="100sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/send_finished" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

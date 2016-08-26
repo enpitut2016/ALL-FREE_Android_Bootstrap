@@ -4,6 +4,7 @@
     <string name="title_activity_send">SendActivity</string>
     <string name="title_activity_finished_sending">FinishedSendingActivity</string>
     <string name="title_activity_help_detail">HelpDetailActivity</string>
+    <string name="title_activity_select_image">SelectImageActivity</string>
     <string name="title_activity_manual_list">ManualListActivity</string>
     <string name="title_activity_show_manual">ShowManualActivity</string>
     <string name="title_activity_remember">RememberActivity</string>
