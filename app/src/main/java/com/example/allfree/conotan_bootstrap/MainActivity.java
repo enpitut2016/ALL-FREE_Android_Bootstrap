@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        //Help画面に遷移するボタン
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
-        parent_button.setTextSize(70);
+        parent_button.setTextSize(50);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,9 +29,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        BootstrapButton child_button = (BootstrapButton)findViewById(R.id.child);
-        child_button.setTextSize(70);
-        child_button.setOnClickListener(new View.OnClickListener() {
+
+        //マニュアル一覧画面に遷移するボタン
+        BootstrapButton manual_button = (BootstrapButton)findViewById(R.id.manual);
+        manual_button.setTextSize(50);
+        manual_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //通知画面に遷移するボタン
+        BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
+        notifications_button.setTextSize(50);
+        notifications_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HelpDetailActivity.class);
