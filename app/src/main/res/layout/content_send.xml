@@ -12,16 +12,60 @@
     tools:context="com.example.allfree.conotan_bootstrap.SendActivity"
     tools:showIn="@layout/activity_send">
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:id="@+id/send"
-        app:bootstrapBrand="warning"
-        app:bootstrapText="送る {fa-paper-plane-o}"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/sending"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
+
+
+        <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:inputType="textMultiLine"-->
+            <!--android:ems="10"-->
+            <!--android:id="@+id/editText"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_above="@+id/send"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:textSize="30dp"-->
+            <!--android:background="@drawable/send_border" />-->
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/send_text"
+            app:bootstrapSize="lg"
+            app:bootstrapBrand="warning"
+            android:layout_marginTop="40dp"
+            />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            android:id="@+id/send"
+            app:bootstrapBrand="warning"
+            app:bootstrapText="送る {fa-paper-plane-o}"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="115dp"
+            android:layout_alignBottom="@+id/linearLayout2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+
+
+    </LinearLayout>
+
 </RelativeLayout>
