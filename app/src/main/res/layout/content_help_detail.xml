@@ -17,7 +17,7 @@
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/button_maemoittayo"
         android:layout_width="450dp"
-        android:layout_height="75dp"
+        android:layout_height="85dp"
         android:text="この前も言った"
         app:bootstrapBrand="warning"
         app:bootstrapSize="lg"

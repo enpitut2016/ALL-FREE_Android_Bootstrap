@@ -12,4 +12,28 @@
     tools:context="com.example.allfree.conotan_bootstrap.SelectImageActivity"
     tools:showIn="@layout/activity_select_image">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="550dp"
+        android:id="@+id/manual_image"
+        android:src="@drawable/konotan"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:text="送信"
+        app:bootstrapBrand="warning"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        android:id="@+id/manual_send"
+        android:layout_below="@+id/manual_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
 </RelativeLayout>
