@@ -31,8 +31,6 @@ public class SendActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
         send_text.setTextSize(40);
