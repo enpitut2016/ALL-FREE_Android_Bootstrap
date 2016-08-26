@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         manual_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SendActivity.class);
+                Intent intent = new Intent(MainActivity.this, ManualListActivity.class);
                 startActivity(intent);
             }
         });
