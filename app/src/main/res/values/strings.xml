@@ -8,4 +8,5 @@
     <string name="title_activity_manual_list">ManualListActivity</string>
     <string name="title_activity_show_manual">ShowManualActivity</string>
     <string name="title_activity_remember">RememberActivity</string>
+    <string name="title_activity_finish_answering">FinishAnswering</string>
 </resources>

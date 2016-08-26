@@ -27,7 +27,7 @@ public class HelpDetailActivity extends AppCompatActivity {
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
+                Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
         });
@@ -40,10 +40,6 @@ public class HelpDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
 
         BootstrapButton button_wakaranai = (BootstrapButton)findViewById(R.id.button_wakaranai);
         button_wakaranai.setTextSize(50);
