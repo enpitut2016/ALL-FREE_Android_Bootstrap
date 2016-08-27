@@ -1,14 +1,17 @@
 package com.example.allfree.conotan_bootstrap;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
+import android.view.Display;
 import android.view.View;
 
 import android.content.Intent;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
@@ -20,6 +23,14 @@ public class FinishedSendingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finished_sending);
 
+        //ウィンドウサイズの取得
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        int width = size.x;
+        int height = size.y;
+
 
 //        BootstrapButton finish_button = (BootstrapButton)findViewById(R.id.send_finished);
 //        finish_button.setTextSize(50);
@@ -30,7 +41,8 @@ public class FinishedSendingActivity extends AppCompatActivity {
         help_text.setText(data);
 
         BootstrapButton main_button = (BootstrapButton) findViewById(R.id.main);
-        main_button.setTextSize(30);
+        main_button.setTextSize(50);
+        main_button.setWidth(width/3);
         main_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

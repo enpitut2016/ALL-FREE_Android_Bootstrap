@@ -27,7 +27,7 @@
             android:gravity="center"
             android:text="送信内容"
             android:textColor="@color/textColor"
-            android:textSize="40sp"
+            android:textSize="50sp"
             android:layout_marginTop="50dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
@@ -36,7 +36,6 @@
             android:id="@+id/help_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/textColor"
             android:textSize="50sp"
             android:layout_marginTop="20dp"
             android:layout_centerVertical="true"
@@ -48,15 +47,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="上記内容を送信しました"
-            android:textColor="@color/textColor"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:layout_marginTop="50dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
         <com.beardedhen.androidbootstrap.BootstrapButton
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:id="@+id/main"
             app:bootstrapBrand="warning"
             app:bootstrapText="戻る"
@@ -65,13 +63,10 @@
             app:showOutline="false"
             app:roundedCorners="true"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="115dp"
-            android:layout_alignBottom="@+id/linearLayout2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginRight="130dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
     </LinearLayout>
 </RelativeLayout>
