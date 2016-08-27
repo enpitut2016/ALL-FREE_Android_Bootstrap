@@ -45,13 +45,13 @@ public class SelectImageActivity extends AppCompatActivity {
         ImageView iv = (ImageView)findViewById(R.id.manual_image);
         iv.setImageBitmap(image);
 
-        //Help画面に遷移するボタン
+        //送信完了画面に遷移するボタン
         BootstrapButton manual_send_button = (BootstrapButton)findViewById(R.id.manual_send);
         manual_send_button.setTextSize(50);
         manual_send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(SelectImageActivity.this, SendActivity.class);
+            Intent intent = new Intent(SelectImageActivity.this, FinishAnswering.class);
             startActivity(intent);
             }
         });
