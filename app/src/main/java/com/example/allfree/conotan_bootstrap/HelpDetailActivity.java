@@ -43,6 +43,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HttpGetTask task = new HttpGetTask(HelpDetailActivity.this);
+                task.execute(0, 9);
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
