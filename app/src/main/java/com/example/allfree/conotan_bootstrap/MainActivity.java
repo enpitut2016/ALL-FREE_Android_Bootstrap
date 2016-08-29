@@ -12,16 +12,30 @@ import android.view.MenuItem;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
+import android.view.Display;
+import android.view.WindowManager;
+import android.graphics.Point;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        //ウィンドウサイズの取得
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        int width = size.x;
+        int height = size.y;
+
         //Help画面に遷移するボタン
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
         parent_button.setTextSize(50);
+        parent_button.setHeight(height/7);
+        parent_button.setWidth(width*2/3);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         //マニュアル一覧画面に遷移するボタン
         BootstrapButton manual_button = (BootstrapButton)findViewById(R.id.manual);
         manual_button.setTextSize(50);
+        manual_button.setHeight(height/7);
+        manual_button.setWidth(width*2/3);
         manual_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         //通知画面に遷移するボタン
         BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
         notifications_button.setTextSize(50);
+        notifications_button.setHeight(height/7);
+        notifications_button.setWidth(width*2/3);
         notifications_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

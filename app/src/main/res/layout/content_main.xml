@@ -12,55 +12,75 @@
     tools:context="com.example.allfree.conotan_bootstrap.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:text="教わる"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:id="@+id/parent"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:text="マニュアル"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:id="@+id/manual"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/parent"
-        android:layout_alignStart="@+id/parent" />
-
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:text="通知"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:id="@+id/notifications"
-        android:layout_below="@+id/manual"
-        android:layout_alignLeft="@+id/manual"
-        android:layout_alignStart="@+id/manual"
-        android:layout_marginTop="116dp" />
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:src="@drawable/konotan"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageView" />
+        android:layout_alignBottom="@+id/sending"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:src="@drawable/conotan"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:id="@+id/imageView" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教わる"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/parent"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="マニュアル"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/manual"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/parent"
+            android:layout_marginTop="5dp"
+            android:layout_alignStart="@+id/parent"
+            android:layout_gravity="center_horizontal" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/notifications"
+            android:layout_below="@+id/manual"
+            android:layout_alignLeft="@+id/manual"
+            android:layout_alignStart="@+id/manual"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>

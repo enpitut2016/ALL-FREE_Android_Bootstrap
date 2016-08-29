@@ -12,36 +12,43 @@
     tools:context="com.example.allfree.conotan_bootstrap.FinishAnswering"
     tools:showIn="@layout/activity_finish_answering">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="送信完了！"
-        android:id="@+id/finishAnser"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp" />
-
-
-
-    <com.beardedhen.androidbootstrap.BootstrapButton
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:id="@+id/main"
-        app:bootstrapBrand="warning"
-        app:bootstrapText="戻る"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="115dp"
-        android:layout_alignBottom="@+id/linearLayout2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginRight="130dp" />
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/sending"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="送信内容"
+            android:id="@+id/finishAnser"
+            android:textColor="@color/textColor"
+            android:textSize="70sp"
+            android:layout_marginTop="100dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/main"
+            app:bootstrapBrand="warning"
+            app:bootstrapText="戻る"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
 
 </RelativeLayout>

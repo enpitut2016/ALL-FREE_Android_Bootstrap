@@ -38,7 +38,7 @@
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:id="@+id/send_text"
             app:bootstrapSize="lg"
             app:bootstrapBrand="warning"
@@ -47,8 +47,8 @@
 
 
         <com.beardedhen.androidbootstrap.BootstrapButton
-            android:layout_width="match_parent"
-            android:layout_height="133dp"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             android:id="@+id/send"
             app:bootstrapBrand="warning"
             app:bootstrapText="送る {fa-paper-plane-o}"
@@ -63,7 +63,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp" />
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal" />
 
 
     </LinearLayout>
