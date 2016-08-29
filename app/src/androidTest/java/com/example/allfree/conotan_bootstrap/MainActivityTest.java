@@ -35,7 +35,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void setUp() throws Exception {
         super.setUp();
         injectInstrumentation(InstrumentationRegistry.getInstrumentation());
-        getActivity();
+        mActivity = getActivity();
     }
     @Test
     public void testCounterShow() {
@@ -43,5 +43,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         onView(withId(R.id.send_text)).perform(typeText("testhoge"));
         onView(withId(R.id.send)).perform(click());
         onView(withId(R.id.help_text)).check(matches(withText("testhoge")));
+        mActivity.finish();
     }
 }
