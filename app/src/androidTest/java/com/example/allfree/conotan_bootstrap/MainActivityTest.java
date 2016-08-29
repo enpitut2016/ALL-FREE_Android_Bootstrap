@@ -35,7 +35,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void setUp() throws Exception {
         super.setUp();
         injectInstrumentation(InstrumentationRegistry.getInstrumentation());
-        mActivity = getActivity();
+        getActivity();
     }
     @Test
     public void testCounterShow() {
