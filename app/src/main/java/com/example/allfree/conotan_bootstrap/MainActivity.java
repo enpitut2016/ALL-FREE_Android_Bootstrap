@@ -11,10 +11,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import android.widget.ImageView;
 
 import android.view.Display;
 import android.view.WindowManager;
 import android.graphics.Point;
+import android.util.TypedValue;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.view.ViewGroup.LayoutParams;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,12 +34,28 @@ public class MainActivity extends AppCompatActivity {
         disp.getSize(size);
         int width = size.x;
         int height = size.y;
+        //マージン設定用
+        LayoutParams lp;
+        MarginLayoutParams mlp;
+
+        //このたんロゴ
+        ImageView img = (ImageView) findViewById(R.id.imageView);
+        lp = img.getLayoutParams();
+        lp.height = height/6;
+        lp.width = lp.height*3; //ロゴの縦横比が1:3
+        mlp = (MarginLayoutParams)lp;
+        mlp.setMargins(0, height/25, 0, 0);
+        img.setLayoutParams(lp);
 
         //Help画面に遷移するボタン
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
-        parent_button.setTextSize(50);
-        parent_button.setHeight(height/7);
-        parent_button.setWidth(width*2/3);
+        parent_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        lp = parent_button.getLayoutParams();
+        lp.height = height/7;
+        lp.width = width*2/3;
+        mlp = (MarginLayoutParams)lp;
+        mlp.setMargins(0, height/25, 0, 0);
+        parent_button.setLayoutParams(lp);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,9 +66,15 @@ public class MainActivity extends AppCompatActivity {
 
         //マニュアル一覧画面に遷移するボタン
         BootstrapButton manual_button = (BootstrapButton)findViewById(R.id.manual);
-        manual_button.setTextSize(50);
+        manual_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
         manual_button.setHeight(height/7);
         manual_button.setWidth(width*2/3);
+        //マージン
+        lp = manual_button.getLayoutParams();
+        mlp = (MarginLayoutParams)lp;
+        mlp.setMargins(mlp.leftMargin, height/100, mlp.rightMargin, mlp.bottomMargin);
+        manual_button.setLayoutParams(mlp);
+        //マージン終わり
         manual_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         //通知画面に遷移するボタン
         BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
-        notifications_button.setTextSize(50);
-        notifications_button.setHeight(height/7);
-        notifications_button.setWidth(width*2/3);
+        notifications_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        lp = notifications_button.getLayoutParams();
+        lp.height = height/7;
+        lp.width = width*2/3;
+        mlp = (MarginLayoutParams)lp;
+        mlp.setMargins(0, height/15, 0, 0);
+        notifications_button.setLayoutParams(lp);
         notifications_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

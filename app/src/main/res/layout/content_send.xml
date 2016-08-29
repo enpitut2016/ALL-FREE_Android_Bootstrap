@@ -42,8 +42,7 @@
             android:id="@+id/send_text"
             app:bootstrapSize="lg"
             app:bootstrapBrand="warning"
-            android:layout_marginTop="40dp"
-            />
+            android:layout_gravity="center_horizontal" />
 
 
         <com.beardedhen.androidbootstrap.BootstrapButton

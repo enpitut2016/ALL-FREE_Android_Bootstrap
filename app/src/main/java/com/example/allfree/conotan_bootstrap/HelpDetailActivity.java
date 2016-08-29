@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,9 +15,15 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
@@ -34,13 +41,62 @@ public class HelpDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_detail);
 
+        //ウィンドウサイズの取得
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        //マージン設定用
+        ViewGroup.LayoutParams lp;
+        ViewGroup.MarginLayoutParams mlp;
+
+        double long_button_width = 0.9;
+        double long_button_height = 0.1;
+        double long_button_font = 0.02;
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout_horizontal);
+        lp = linearLayout.getLayoutParams();
+        lp.height = (int)(height*0.50);
+        lp.width = width;
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/50, 0, 0);
+        linearLayout.setLayoutParams(lp);
+
+        int textview_width=width/2;
+
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        lp = imageView.getLayoutParams();
+        //lp.width = (int)(lp.width*((height*0.45)/lp.height));
+        lp.width = (int)(width*0.45);
+        textview_width = (int)(width*0.95-lp.width);
+        lp.height = (int)(height*0.45);
+        //lp.width = width/10*4;
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, 0, 0, 0);
+        imageView.setLayoutParams(lp);
+
         TextView textView = (TextView)findViewById(R.id.helptext);
         textView.setText("LINEスタンプの使い方教えて");
-        textView.setTextSize(50);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/50);
+        lp = textView.getLayoutParams();
+        lp.height = (int)(height*0.45);
+        //lp.width = (int)(width*0.45);
+        lp.width = textview_width;
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, 0, 0, 0);
+        textView.setLayoutParams(lp);
 
-        BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
-        parent_button.setTextSize(50);
-        parent_button.setOnClickListener(new View.OnClickListener() {
+        BootstrapButton maemoittayo_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
+        maemoittayo_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*long_button_font));
+        lp = maemoittayo_button.getLayoutParams();
+        lp.height = (int)(height*long_button_height);
+        lp.width = (int)(width*long_button_width);
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/200, 0, 0);
+        maemoittayo_button.setLayoutParams(lp);
+        maemoittayo_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
@@ -48,7 +104,13 @@ public class HelpDetailActivity extends AppCompatActivity {
             }
         });
         BootstrapButton button_ok = (BootstrapButton)findViewById(R.id.button_ok);
-        button_ok.setTextSize(50);
+        button_ok.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*long_button_font));
+        lp = button_ok.getLayoutParams();
+        lp.height = (int)(height*long_button_height);
+        lp.width = (int)(width*long_button_width);
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, 0, 0, 0);
+        button_ok.setLayoutParams(lp);
         button_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,12 +130,18 @@ public class HelpDetailActivity extends AppCompatActivity {
         });
 
         BootstrapButton button_wakaranai = (BootstrapButton)findViewById(R.id.button_wakaranai);
-        button_wakaranai.setTextSize(50);
+        button_wakaranai.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*long_button_font));
+        lp = button_wakaranai.getLayoutParams();
+        lp.height = (int)(height*long_button_height);
+        lp.width = (int)(width*long_button_width);
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/200, 0, 0);
+        button_wakaranai.setLayoutParams(lp);
         button_wakaranai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(HelpDetailActivity.this, ConotanNoticeActivity.class);
+                startActivity(intent);
             }
         });
     }

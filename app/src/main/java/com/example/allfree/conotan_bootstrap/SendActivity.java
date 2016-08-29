@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 
@@ -20,6 +21,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import android.text.SpannableStringBuilder;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
 public class SendActivity extends AppCompatActivity {
@@ -42,22 +44,37 @@ public class SendActivity extends AppCompatActivity {
         disp.getSize(size);
         int width = size.x;
         int height = size.y;
+        //マージン設定用
+        ViewGroup.LayoutParams lp;
+        ViewGroup.MarginLayoutParams mlp;
+
+        double form_button_width = 0.45;
+        double form_button_height = 0.15;
+        double form_button_font = 0.03;
 
         BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
-        send_text.setTextSize(40);
-        send_text.setHeight(height/5);
+        send_text.setTextSize(height/40);
+        lp = send_text.getLayoutParams();
+        lp.height = height/3;
+        lp.width = width*9/10;
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/25, 0, 0);
+        send_text.setLayoutParams(lp);
 
         BootstrapButton send_button = (BootstrapButton) findViewById(R.id.send);
-        send_button.setTextSize(70);
-        send_button.setWidth(width*2/3);
+        send_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*form_button_font));
+        lp = send_button.getLayoutParams();
+        lp.height = (int)(height*form_button_height);
+        lp.width = (int)(width*form_button_width);
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/20, 0, 0);
+        send_button.setLayoutParams(lp);
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
                 SpannableStringBuilder sp = (SpannableStringBuilder) send_text.getText();
                 Log.v("onCreate", sp.toString());
-
-
                 Intent intent = new Intent(SendActivity.this, FinishedSendingActivity.class);
                 intent.putExtra("help_text", sp.toString());
                 startActivity(intent);
