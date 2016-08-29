@@ -19,7 +19,7 @@ import java.net.URLEncoder;
 /**
  * Created by tsuruda_tomohiro on 2016/08/29.
  */
-public class HttpGetTask extends AsyncTask<Integer, Void, Void> {
+public class HttpGetTask extends AsyncTask<String, Void, Void> {
     private final String DEFAULTURL = "https://fcm.googleapis.com/fcm/send";
 
     private Activity mParentActivity;
@@ -38,10 +38,10 @@ public class HttpGetTask extends AsyncTask<Integer, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(Integer... arg0) {
-        mUri = DEFAULTURL + "num=" + arg0[0].toString() + "&stat=" + arg0[1].toString() + "&pwm=1023" ;
+    protected Void doInBackground(String... arg0) {
+        //mUri = DEFAULTURL + "num=" + arg0[0].toString() + "&stat=" + arg0[1].toString() + "&pwm=1023" ;
         //exec_get();
-        doPost();
+        doPost(arg0[0].toString(), arg0[1].toString());
         return null;
 
     }
@@ -50,47 +50,47 @@ public class HttpGetTask extends AsyncTask<Integer, Void, Void> {
         mDialog.dismiss();
     }
 
-    private String exec_get() {
-        HttpURLConnection http = null;
-        InputStream in =null;
-        String src = "";
-        try {
-            URL url = new URL(mUri);
-            http = (HttpURLConnection) url.openConnection();
-            http.setRequestMethod("GET");
-            http.connect();
+//    private String exec_get() {
+//        HttpURLConnection http = null;
+//        InputStream in =null;
+//        String src = "";
+//        try {
+//            URL url = new URL(mUri);
+//            http = (HttpURLConnection) url.openConnection();
+//            http.setRequestMethod("GET");
+//            http.connect();
+//
+//            in = http.getInputStream();
+//
+//            byte[] line = new byte[1024];
+//            int size;
+//            while (true) {
+//                size = in.read(line);
+//                if(size <= 0) {
+//                    break;
+//                }
+//                src += new String(line);
+//            }
+//        }catch(Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                if (http != null) {
+//                    http.disconnect();
+//                }
+//                if (in != null) {
+//                    in.close();
+//                }
+//            } catch(Exception ignored) {
+//            }
+//        }
+//        return src;
+//
+//    }
 
-            in = http.getInputStream();
-
-            byte[] line = new byte[1024];
-            int size;
-            while (true) {
-                size = in.read(line);
-                if(size <= 0) {
-                    break;
-                }
-                src += new String(line);
-            }
-        }catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (http != null) {
-                    http.disconnect();
-                }
-                if (in != null) {
-                    in.close();
-                }
-            } catch(Exception ignored) {
-            }
-        }
-        return src;
-
-    }
-
-    private void doPost()  {
+    private void doPost(String title, String content)  {
         String url = "https://fcm.googleapis.com/fcm/send";
-        String requestJSON = "{\"to\":\"ey4GCB8DgII:APA91bFgO-PxuYuwGOmKofdTIIsaraAsSk4iE97N0rd4gFhRKYs_YkMhvjs3BI6FbUANubsATKj76jqfNi4YpmVsj3xokswVlGx03vSR3hpGP5Jsp60fvzPnaixL2bXGhSy_5F_q46sS\",\"notification\":{\"body\":\"conotan_body\",\"title\":\"conotan_title\"}}";
+        String requestJSON = "{\"to\":\"ey4GCB8DgII:APA91bFgO-PxuYuwGOmKofdTIIsaraAsSk4iE97N0rd4gFhRKYs_YkMhvjs3BI6FbUANubsATKj76jqfNi4YpmVsj3xokswVlGx03vSR3hpGP5Jsp60fvzPnaixL2bXGhSy_5F_q46sS\",\"notification\":{\"body\":\""+content+"\",\"title\":\""+title+"\"}}";
 
         HttpURLConnection conn = null;
         try {

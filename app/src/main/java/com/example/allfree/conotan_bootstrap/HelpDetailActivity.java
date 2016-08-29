@@ -44,7 +44,7 @@ public class HelpDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HttpGetTask task = new HttpGetTask(HelpDetailActivity.this);
-                task.execute(0, 9);
+                task.execute("title", "この前言ったじゃん");
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
