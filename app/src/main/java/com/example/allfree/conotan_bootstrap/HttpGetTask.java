@@ -42,9 +42,9 @@ public class HttpGetTask extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... arg0) {
         //mUri = DEFAULTURL + "num=" + arg0[0].toString() + "&stat=" + arg0[1].toString() + "&pwm=1023" ;
         //exec_get();
+
         doPost(arg0[0].toString(), arg0[1].toString());
         return null;
-
     }
 
     @Override
@@ -89,6 +89,7 @@ public class HttpGetTask extends AsyncTask<String, Void, Void> {
 //        return src;
 //
 //    }
+
 
     private void doPost(String title, String content)  {
         String url = "https://fcm.googleapis.com/fcm/send";
