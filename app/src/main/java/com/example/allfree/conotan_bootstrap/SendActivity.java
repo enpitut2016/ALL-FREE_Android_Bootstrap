@@ -43,6 +43,8 @@ public class SendActivity extends AppCompatActivity {
                 BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
                 SpannableStringBuilder sp = (SpannableStringBuilder) send_text.getText();
                 Log.v("onCreate", sp.toString());
+                HttpPostText task = new HttpPostText(SendActivity.this);
+                task.execute(sp.toString());
 
 
                 Intent intent = new Intent(SendActivity.this, FinishedSendingActivity.class);
