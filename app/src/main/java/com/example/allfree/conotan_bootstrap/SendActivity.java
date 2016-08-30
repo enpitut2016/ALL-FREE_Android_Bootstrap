@@ -47,6 +47,8 @@ public class SendActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SendActivity.this, FinishedSendingActivity.class);
                 intent.putExtra("help_text", sp.toString());
+                HttpGetTask task = new HttpGetTask(SendActivity.this);
+                task.execute(sp.toString());
                 startActivity(intent);
             }
         });

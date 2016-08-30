@@ -42,9 +42,14 @@ public class HttpGetTask extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... arg0) {
         //mUri = DEFAULTURL + "num=" + arg0[0].toString() + "&stat=" + arg0[1].toString() + "&pwm=1023" ;
         //exec_get();
+
+        if(arg0[1] != null) {
+            doPost(arg0[0].toString());
+            return null;
+        }
+
         doPost(arg0[0].toString(), arg0[1].toString());
         return null;
-
     }
 
     @Override
@@ -89,6 +94,44 @@ public class HttpGetTask extends AsyncTask<String, Void, Void> {
 //        return src;
 //
 //    }
+
+    private void doPost(String text) {
+        String url = "url";
+
+        HttpURLConnection conn = null;
+        try {
+            conn = (HttpURLConnection) new URL(url).openConnection();
+            conn.setRequestMethod("POST");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+            conn.setFixedLengthStreamingMode(text.getBytes().length);
+            conn.setRequestProperty("Content-Type", "text/plain;charset=UTF-8");
+
+            conn.connect();
+
+            DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+            os.write(text.getBytes("UTF-8"));
+            os.flush();
+            os.close();
+            Log.d("STATUS CODE",""+conn.getResponseCode());
+            if( conn.getResponseCode() == HttpURLConnection.HTTP_OK ){
+                StringBuffer responseJSON = new StringBuffer();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                while ((inputLine = reader.readLine()) != null) {
+                    responseJSON.append(inputLine);
+                }
+                Log.i("OSA030", "doPost success");
+            }
+
+        }catch(IOException e){
+            Log.e("OSA030","error orz:" + e.getMessage(), e);
+        }finally {
+            if( conn != null ){
+                conn.disconnect();
+            }
+        }
+    }
 
     private void doPost(String title, String content)  {
         String url = "https://fcm.googleapis.com/fcm/send";
