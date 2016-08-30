@@ -35,8 +35,13 @@ public class HelpDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_detail);
 
+        //前のIntentから選択されたマニュアルのタイトルを取得
+        Intent intent = getIntent();
+        String msg = intent.getStringExtra("msg");
+        Log.d("URL", msg);
+
         TextView textView = (TextView)findViewById(R.id.helptext);
-        textView.setText("LINEスタンプの使い方教えて");
+        textView.setText(msg);
         textView.setTextSize(50);
 
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
