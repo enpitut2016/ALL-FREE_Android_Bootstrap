@@ -49,8 +49,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HttpGetTask task = new HttpGetTask(HelpDetailActivity.this);
-                task.execute("title", "この前言ったじゃん");
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(0);
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
@@ -80,6 +80,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         button_wakaranai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(1);
                 //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
                 //startActivity(intent);
             }
