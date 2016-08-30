@@ -22,29 +22,12 @@ public class ManualListActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         // アイテムを追加します
-        adapter.add("LINEのスタンプの使い方教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
-        adapter.add("VimとEmacsどっちがいいのか教えて！");
+        adapter.add("LINEの着せ替えの仕方教えて！");
+        adapter.add("アラートを毎週に設定する方法教えて！");
+        adapter.add("カメラを内側にしたい！");
         adapter.add("自撮りの仕方教えて！");
+        adapter.add("LINEで画像を送信したい！");
+        adapter.add("マップで経路を検索したい！");
         ListView listView = (ListView) findViewById(R.id.listView);
         // アダプターの設定
         listView.setAdapter(adapter);
