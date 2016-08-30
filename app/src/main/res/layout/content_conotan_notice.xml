@@ -60,7 +60,7 @@
             android:layout_height="90dp"
             android:id="@+id/manual"
             app:bootstrapBrand="warning"
-            app:bootstrapText="過去のマニュアルから探す"
+            app:bootstrapText="過去のマニュアルを探す"
             app:bootstrapSize="lg"
             app:buttonMode="regular"
             app:showOutline="false"

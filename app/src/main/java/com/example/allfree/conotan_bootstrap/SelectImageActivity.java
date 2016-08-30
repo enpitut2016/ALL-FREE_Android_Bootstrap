@@ -39,7 +39,7 @@ public class SelectImageActivity extends AppCompatActivity {
 
         double form_button_width = 0.45;
         double form_button_height = 0.15;
-        double form_button_font = 0.03;
+        double form_button_font = 0.0375;
 
         //ウィンドウサイズの取得
         WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);

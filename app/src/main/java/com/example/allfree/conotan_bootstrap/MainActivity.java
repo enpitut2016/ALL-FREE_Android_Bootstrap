@@ -20,6 +20,9 @@ import android.util.TypedValue;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.view.ViewGroup.LayoutParams;
 
+import android.content.SharedPreferences;
+import android.content.Context;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Help画面に遷移するボタン
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
-        parent_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        parent_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
         lp = parent_button.getLayoutParams();
         lp.height = height/7;
         lp.width = width*2/3;
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         //マニュアル一覧画面に遷移するボタン
         BootstrapButton manual_button = (BootstrapButton)findViewById(R.id.manual);
-        manual_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        manual_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
         manual_button.setHeight(height/7);
         manual_button.setWidth(width*2/3);
         //マージン
@@ -83,9 +86,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
+        String test = data.getString("LevelSave","");
+        if(test=="") {
+            SharedPreferences.Editor editor = data.edit();
+            editor.putString("LevelSave", "test");
+            editor.apply();
+        }
+
+        String test_text = data.getString("LevelSave","" );
+
         //通知画面に遷移するボタン
         BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
-        notifications_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        notifications_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
+        notifications_button.setText(test_text);
         lp = notifications_button.getLayoutParams();
         lp.height = height/7;
         lp.width = width*2/3;

@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_gravity="center_horizontal"
             android:text="送信内容"
             android:id="@+id/finishAnser"
             android:textColor="@color/textColor"

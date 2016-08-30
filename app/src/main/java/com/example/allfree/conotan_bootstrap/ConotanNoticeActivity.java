@@ -38,15 +38,15 @@ public class ConotanNoticeActivity extends AppCompatActivity {
 
         double long_button_width = 0.90;
         double long_button_height = 0.1;
-        double long_button_font = 0.020;
+        double long_button_font = 0.025;
 
         TextView textView = (TextView) findViewById(R.id.text);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/35);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
         lp = textView.getLayoutParams();
         lp.height = height/4;
         lp.width = width;
         mlp = (ViewGroup.MarginLayoutParams)lp;
-        mlp.setMargins(0, height/50, 0, 0);
+        mlp.setMargins(0, height/100, 0, 0);
         textView.setLayoutParams(lp);
 
         ImageView imageView = (ImageView) findViewById(R.id.image);

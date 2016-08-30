@@ -22,35 +22,47 @@
         android:weightSum="1">
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/linearLayout_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:id="@+id/linearLayout_horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="500dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:gravity="center_horizontal">-->
 
-            <ImageView
-                android:src="@drawable/linetalk"
-                android:layout_width="wrap_content"
+            <!--<ImageView-->
+                <!--android:src="@drawable/linetalk"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/imageView" />-->
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:background="#dddddd" />
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="質問内容"
+                android:id="@+id/title"
+                android:textColor="@color/textColor"
+                android:textSize="70sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="New Text"
-                android:background="#fff0dd"
+                android:maxLines="4"
+                android:background="#ffffcc"
                 android:id="@+id/helptext" />
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
         <com.beardedhen.androidbootstrap.BootstrapButton
             android:id="@+id/button_ok"
             android:layout_width = "wrap_content"
             android:layout_height="wrap_content"
-            android:text="マニュアル作成"
+            android:text="マニュアル送付"
             app:bootstrapBrand="warning"
             app:bootstrapSize="lg"
             app:buttonMode="regular"

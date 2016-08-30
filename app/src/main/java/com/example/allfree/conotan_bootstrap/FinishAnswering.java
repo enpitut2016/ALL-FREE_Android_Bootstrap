@@ -36,11 +36,11 @@ public class FinishAnswering extends AppCompatActivity {
 
         double return_button_width = 0.35;
         double return_button_height = 0.1;
-        double return_button_font = 0.02;
+        double return_button_font = 0.025;
 
         TextView textView = (TextView)findViewById(R.id.finishAnser );
         textView.setText("送信完了！");
-        textView.setTextSize(height/30);
+        textView.setTextSize(height/20);
 
         BootstrapButton button_finish = (BootstrapButton)findViewById(R.id.main);
         button_finish.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*return_button_font));

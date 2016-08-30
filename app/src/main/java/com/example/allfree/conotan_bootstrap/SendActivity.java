@@ -1,6 +1,8 @@
 package com.example.allfree.conotan_bootstrap;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +25,7 @@ import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class SendActivity extends AppCompatActivity {
 
@@ -50,7 +53,14 @@ public class SendActivity extends AppCompatActivity {
 
         double form_button_width = 0.45;
         double form_button_height = 0.15;
-        double form_button_font = 0.03;
+        double form_button_font = 0.0375;
+
+        TextView titleText = (TextView)findViewById(R.id.title);
+        titleText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
+        lp = titleText.getLayoutParams();
+        mlp = (ViewGroup.MarginLayoutParams)lp;
+        mlp.setMargins(0, height/50, 0, 0);
+        titleText.setLayoutParams(lp);
 
         BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
         send_text.setTextSize(height/40);
@@ -75,6 +85,10 @@ public class SendActivity extends AppCompatActivity {
                 BootstrapEditText send_text = (BootstrapEditText) findViewById(R.id.send_text);
                 SpannableStringBuilder sp = (SpannableStringBuilder) send_text.getText();
                 Log.v("onCreate", sp.toString());
+                SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = data.edit();
+                editor.putString("LevelSave", sp.toString());
+                editor.apply();
                 Intent intent = new Intent(SendActivity.this, FinishedSendingActivity.class);
                 intent.putExtra("help_text", sp.toString());
                 startActivity(intent);

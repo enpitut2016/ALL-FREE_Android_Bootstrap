@@ -48,10 +48,10 @@
             android:name=".FinishAnswering"
             android:label="@string/title_activity_finish_answering"
             android:theme="@style/AppTheme.NoActionBar" />
-	<activity            
-	    android:name=".ConotanNoticeActivity"
+        <activity
+            android:name=".ConotanNoticeActivity"
             android:label="@string/title_activity_conotan_notice"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
