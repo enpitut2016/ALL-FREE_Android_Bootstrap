@@ -27,7 +27,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FinishedSendingActivity"
-            android:label="@string/title_activity_finished_sending" />
+            android:label="@string/title_activity_finished_sending"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HelpDetailActivity"
             android:label="@string/title_activity_help_detail"
@@ -35,7 +36,8 @@
         <activity android:name=".RememberActivity" />
         <activity
             android:name=".SelectImageActivity"
-            android:label="@string/title_activity_select_image" />
+            android:label="@string/title_activity_select_image"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ManualListActivity"
             android:label="@string/title_activity_manual_list"
@@ -63,10 +65,12 @@
             android:name=".ConotanNoticeActivity"
             android:label="@string/title_activity_conotan_notice"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".ManualImageActivity"
             android:label="@string/title_activity_manual_image"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

@@ -36,14 +36,25 @@
             <!--android:textSize="30dp"-->
             <!--android:background="@drawable/send_border" />-->
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="質問を送る"
+            android:id="@+id/title"
+            android:textColor="@color/textColor"
+            android:textSize="70sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
         <com.beardedhen.androidbootstrap.BootstrapEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/send_text"
             app:bootstrapSize="lg"
             app:bootstrapBrand="warning"
-            android:layout_marginTop="40dp"
-            />
+            android:layout_gravity="center_horizontal" />
 
 
         <com.beardedhen.androidbootstrap.BootstrapButton

@@ -10,5 +10,6 @@
     <string name="title_activity_remember">RememberActivity</string>
     <string name="title_activity_finish_answering">FinishAnswering</string>
     <string name="title_activity_conotan_notice">ConotanNoticeActivity</string>
+    <string name="title_activity_wakaranai_notice">WakaranaiNoticeActivity</string>
     <string name="title_activity_manual_image">ManualImageActivity</string>
 </resources>

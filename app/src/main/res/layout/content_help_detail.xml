@@ -12,91 +12,96 @@
     tools:context="com.example.allfree.conotan_bootstrap.HelpDetailActivity"
     tools:showIn="@layout/activity_help_detail">
 
-
-
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/button_maemoittayo"
-        android:layout_width="450dp"
-        android:layout_height="85dp"
-        android:text="この前も言った"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-
-        android:layout_alignParentBottom="true"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom ="50dp" />
+        android:layout_alignBottom="@+id/sending"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
 
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/button_wakaranai"
-        android:layout_width="450dp"
-        android:layout_height="85dp"
-        android:text="これはわからない"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:id="@+id/linearLayout_horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="500dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:gravity="center_horizontal">-->
 
-        android:layout_alignBottom="@+id/button_maemoittayo"
-        android:layout_marginBottom="100dp"
+            <!--<ImageView-->
+                <!--android:src="@drawable/linetalk"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/imageView" />-->
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="質問内容"
+                android:id="@+id/title"
+                android:textColor="@color/textColor"
+                android:textSize="70sp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
 
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="New Text"
+                android:maxLines="4"
+                android:background="#ffffcc"
+                android:id="@+id/helptext" />
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/button_ok"
-        android:layout_width = "450dp"
-        android:layout_height="85dp"
-        android:text="マニュアル作成"
-        app:bootstrapBrand="warning"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignBottom="@+id/button_wakaranai"
-        android:layout_marginBottom="100dp" />
+        <!--</LinearLayout>-->
 
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/button_ok"
+            android:layout_width = "wrap_content"
+            android:layout_height="wrap_content"
+            android:text="マニュアル送付"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal" />
 
-    xmlns:tools="http://schemas.android.com/tools"
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    android:background="#000000"
-    tools:context=".MainActivity">
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/button_wakaranai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="これはわからない"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
 
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/button_maemoittayo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="この前も言った"
+            app:bootstrapBrand="warning"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal" />
 
-    <View
-        android:id="@+id/center_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerInParent="true"
-        />
-
-    <ImageView
-        android:src="@drawable/linetalk"
-        android:scaleType="fitCenter"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignBottom="@+id/button_ok"
-        android:layout_marginBottom="100dp"
-        android:id="@+id/imageView"
-        android:layout_alignLeft="@+id/center_view"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:text="New Text"
-        android:id="@+id/helptext"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignBottom="@+id/button_ok"
-        android:layout_marginBottom="100dp"
-        android:layout_alignRight="@+id/center_view"/>
+    </LinearLayout>
 
 
 </RelativeLayout>

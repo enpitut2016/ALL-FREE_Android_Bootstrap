@@ -63,22 +63,22 @@
             android:layout_alignStart="@+id/parent"
             android:layout_gravity="center_horizontal" />
 
-        <com.beardedhen.androidbootstrap.BootstrapButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="通知"
-            app:bootstrapBrand="warning"
-            app:bootstrapSize="lg"
-            app:buttonMode="regular"
-            app:showOutline="false"
-            app:roundedCorners="true"
-            android:gravity="center_horizontal"
-            android:id="@+id/notifications"
-            android:layout_below="@+id/manual"
-            android:layout_alignLeft="@+id/manual"
-            android:layout_alignStart="@+id/manual"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center_horizontal" />
+        <!--<com.beardedhen.androidbootstrap.BootstrapButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="通知"-->
+            <!--app:bootstrapBrand="warning"-->
+            <!--app:bootstrapSize="lg"-->
+            <!--app:buttonMode="regular"-->
+            <!--app:showOutline="false"-->
+            <!--app:roundedCorners="true"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:id="@+id/notifications"-->
+            <!--android:layout_below="@+id/manual"-->
+            <!--android:layout_alignLeft="@+id/manual"-->
+            <!--android:layout_alignStart="@+id/manual"-->
+            <!--android:layout_marginTop="100dp"-->
+            <!--android:layout_gravity="center_horizontal" />-->
 
 
     </LinearLayout>

@@ -23,6 +23,7 @@
 
         <TextView
             android:layout_width="match_parent"
+            android:id="@+id/help_title"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="送信内容"
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="50sp"
+            android:maxLines="6"
             android:layout_marginTop="20dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
@@ -45,6 +47,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/help_info"
             android:gravity="center"
             android:text="上記内容を送信しました"
             android:textSize="30sp"
