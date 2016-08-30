@@ -2,6 +2,7 @@ package com.example.allfree.conotan_bootstrap;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -45,6 +46,7 @@ public class HttpGetTask extends AsyncTask<String, Void, Void> {
         return null;
 
     }
+
     @Override
     protected void onPostExecute(Void result) {
         mDialog.dismiss();
