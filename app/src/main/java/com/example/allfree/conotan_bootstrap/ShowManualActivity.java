@@ -12,7 +12,8 @@ import android.view.View;
 
 import com.beardedhen.androidbootstrap.AwesomeTextView;
 
-public class ShowManualActivity extends AppCompatActivity {
+public class
+ShowManualActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

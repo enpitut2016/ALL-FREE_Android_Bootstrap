@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -34,8 +35,13 @@ public class HelpDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_detail);
 
+        //前のIntentから選択されたマニュアルのタイトルを取得
+        Intent intent = getIntent();
+        String msg = intent.getStringExtra("msg");
+        Log.d("URL", msg);
+
         TextView textView = (TextView)findViewById(R.id.helptext);
-        textView.setText("LINEスタンプの使い方教えて");
+        textView.setText(msg);
         textView.setTextSize(50);
 
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
@@ -43,6 +49,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(0);
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
@@ -72,6 +80,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         button_wakaranai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(1);
                 //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
                 //startActivity(intent);
             }
@@ -79,6 +89,7 @@ public class HelpDetailActivity extends AppCompatActivity {
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+
 
         // The ACTION_OPEN_DOCUMENT intent was sent with the request code
         // READ_REQUEST_CODE. If the request code seen here doesn't match, it's the
@@ -100,6 +111,13 @@ public class HelpDetailActivity extends AppCompatActivity {
                         // openFileOutputはContextのメソッドなのでActivity内ならばthisでOK
                         out = this.openFileOutput("image.png", Context.MODE_PRIVATE);
                         Image.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+
+
+                        // AsyncTaskManagerに通信させる
+                        HttpImagePost task = new HttpImagePost(HelpDetailActivity.this);
+                        task.execute("data/data/com.example.allfree.conotan_bootstrap/files/image.png");
+
                     } catch (FileNotFoundException e) {
                         // エラー処理
                     } finally {
