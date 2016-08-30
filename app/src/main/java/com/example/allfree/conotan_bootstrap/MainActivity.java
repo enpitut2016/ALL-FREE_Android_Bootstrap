@@ -47,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
         lp.height = height/6;
         lp.width = lp.height*3; //ロゴの縦横比が1:3
         mlp = (MarginLayoutParams)lp;
-        mlp.setMargins(0, height/25, 0, 0);
+        mlp.setMargins(0, height/20, 0, 0);
         img.setLayoutParams(lp);
 
         //Help画面に遷移するボタン
         BootstrapButton parent_button = (BootstrapButton)findViewById(R.id.parent);
-        parent_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
+        parent_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/25);
         lp = parent_button.getLayoutParams();
-        lp.height = height/7;
+        lp.height = height/5;
         lp.width = width*2/3;
         mlp = (MarginLayoutParams)lp;
-        mlp.setMargins(0, height/25, 0, 0);
+        mlp.setMargins(0, height/15, 0, 0);
         parent_button.setLayoutParams(lp);
         parent_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
         //マニュアル一覧画面に遷移するボタン
         BootstrapButton manual_button = (BootstrapButton)findViewById(R.id.manual);
-        manual_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
-        manual_button.setHeight(height/7);
+        manual_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/25);
+        manual_button.setHeight(height/5);
         manual_button.setWidth(width*2/3);
         //マージン
         lp = manual_button.getLayoutParams();
         mlp = (MarginLayoutParams)lp;
-        mlp.setMargins(mlp.leftMargin, height/100, mlp.rightMargin, mlp.bottomMargin);
+        mlp.setMargins(mlp.leftMargin, height/20, mlp.rightMargin, mlp.bottomMargin);
         manual_button.setLayoutParams(mlp);
         //マージン終わり
         manual_button.setOnClickListener(new View.OnClickListener() {
@@ -86,33 +86,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
-        String test = data.getString("LevelSave","");
-        if(test=="") {
-            SharedPreferences.Editor editor = data.edit();
-            editor.putString("LevelSave", "test");
-            editor.apply();
-        }
-
-        String test_text = data.getString("LevelSave","" );
-
-        //通知画面に遷移するボタン
-        BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
-        notifications_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
-        notifications_button.setText(test_text);
-        lp = notifications_button.getLayoutParams();
-        lp.height = height/7;
-        lp.width = width*2/3;
-        mlp = (MarginLayoutParams)lp;
-        mlp.setMargins(0, height/15, 0, 0);
-        notifications_button.setLayoutParams(lp);
-        notifications_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HelpDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+//        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
+//        String test = data.getString("LevelSave","");
+//        if(test=="") {
+//            SharedPreferences.Editor editor = data.edit();
+//            editor.putString("LevelSave", "test");
+//            editor.apply();
+//        }
+//
+//        String test_text = data.getString("LevelSave","" );
+//
+//        //通知画面に遷移するボタン
+//        BootstrapButton notifications_button = (BootstrapButton)findViewById(R.id.notifications);
+//        notifications_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/30);
+//        //notifications_button.setText(test_text);
+//        lp = notifications_button.getLayoutParams();
+//        lp.height = height/7;
+//        lp.width = width*2/3;
+//        mlp = (MarginLayoutParams)lp;
+//        mlp.setMargins(0, height/15, 0, 0);
+//        notifications_button.setLayoutParams(lp);
+//        notifications_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, HelpDetailActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
