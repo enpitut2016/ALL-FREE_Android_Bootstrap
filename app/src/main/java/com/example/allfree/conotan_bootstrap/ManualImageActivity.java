@@ -27,7 +27,12 @@ public class ManualImageActivity extends AppCompatActivity {
         //リンクをタップしたときに標準ブラウザを起動させない
         wv.setWebViewClient(new WebViewClient());
 
-        //最初にgoogleのページを表示する。
+        //. (1) 読み込み時にページ横幅を画面幅に無理やり合わせる
+        wv.getSettings().setLoadWithOverviewMode( true );
+
+        //. (2) ワイドビューポートへの対応
+        wv.getSettings().setUseWideViewPort( true );
+
         wv.loadUrl(url);
     }
 
