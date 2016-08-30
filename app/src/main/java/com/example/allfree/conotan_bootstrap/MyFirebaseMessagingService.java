@@ -19,6 +19,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final int NOTIFICATION_ID = 0;
     Intent intent;
     PendingIntent contentIntent;
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         String title = remoteMessage.getNotification().getTitle();
@@ -33,31 +34,29 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         switch (msg[0]){
             //教えろ通知
             case "0":
-                intent = new Intent(MyFirebaseMessagingService.this, HelpDetailActivity.class);
-                intent.putExtra("msg", msg[1]);
-                contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+                this.intent = new Intent(MyFirebaseMessagingService.this, HelpDetailActivity.class);
+                this.intent.putExtra("msg", bodyMsg);
                 break;
             //この前いったじゃん
             case "1":
-                intent = new Intent(MyFirebaseMessagingService.this, ConotanNoticeActivity.class);
-                intent.putExtra("msg", msg[1]);
-                contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+                this.intent = new Intent(MyFirebaseMessagingService.this, ConotanNoticeActivity.class);
+                this.intent.putExtra("msg", bodyMsg);
                 break;
             //マニュアル受信
             case "2":
-                intent = new Intent(MyFirebaseMessagingService.this, ManualImageActivity.class);
-                intent.putExtra("url", msg[2]);
-                contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+                this.intent = new Intent(MyFirebaseMessagingService.this, ManualImageActivity.class);
+                this.intent.putExtra("url", msg[2]);
                 break;
         }
 
+        this.contentIntent = PendingIntent.getActivity(this, 0, this.intent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.icon_sm)
                         //.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.icon))
                         .setContentTitle(title)
                         .setContentText(bodyMsg)
-                        .setContentIntent(contentIntent);
+                        .setContentIntent(this.contentIntent);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(NOTIFICATION_ID, builder.build());

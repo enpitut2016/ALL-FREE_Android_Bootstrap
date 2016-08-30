@@ -44,6 +44,11 @@ public class HelpDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_detail);
 
+        //前のIntentから選択されたマニュアルのタイトルを取得
+        Intent intent = getIntent();
+        String msg = intent.getStringExtra("msg");
+        Log.d("URL", msg);
+
         //ウィンドウサイズの取得
         WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
         Display disp = wm.getDefaultDisplay();
@@ -92,6 +97,7 @@ public class HelpDetailActivity extends AppCompatActivity {
 
         TextView textView = (TextView)findViewById(R.id.helptext);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/40);
+        textView.setText(msg);
         lp = textView.getLayoutParams();
         lp.height = (int)(height*0.3);
         lp.width = (int)(width*0.95);
@@ -100,13 +106,6 @@ public class HelpDetailActivity extends AppCompatActivity {
         textView.setLayoutParams(lp);
         textView.setPadding((int)(width*0.025),(int)(height*0.01),(int)(width*0.025),(int)(height*0.01));
         textView.setMovementMethod(ScrollingMovementMethod.getInstance());
-
-        //前のIntentから選択されたマニュアルのタイトルを取得
-        Intent intent = getIntent();
-        String msg = intent.getStringExtra("msg");
-        Log.d("URL", msg);
-
-        textView.setText(msg);
 
         BootstrapButton maemoittayo_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
         maemoittayo_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*long_button_font));
