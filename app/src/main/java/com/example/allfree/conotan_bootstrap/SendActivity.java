@@ -79,6 +79,9 @@ public class SendActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = data.edit();
                 editor.putString("LevelSave", sp.toString());
                 editor.apply();
+                HttpPostText task = new HttpPostText(SendActivity.this);
+                task.execute(sp.toString());
+
                 Intent intent = new Intent(SendActivity.this, FinishedSendingActivity.class);
                 intent.putExtra("help_text", sp.toString());
                 startActivity(intent);

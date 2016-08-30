@@ -29,6 +29,7 @@ import android.text.method.ScrollingMovementMethod;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -90,7 +91,6 @@ public class HelpDetailActivity extends AppCompatActivity {
         String test_text = data.getString("LevelSave","" );
 
         TextView textView = (TextView)findViewById(R.id.helptext);
-        textView.setText(test_text);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, height/40);
         lp = textView.getLayoutParams();
         lp.height = (int)(height*0.3);
@@ -100,6 +100,13 @@ public class HelpDetailActivity extends AppCompatActivity {
         textView.setLayoutParams(lp);
         textView.setPadding((int)(width*0.025),(int)(height*0.01),(int)(width*0.025),(int)(height*0.01));
         textView.setMovementMethod(ScrollingMovementMethod.getInstance());
+
+        //前のIntentから選択されたマニュアルのタイトルを取得
+        Intent intent = getIntent();
+        String msg = intent.getStringExtra("msg");
+        Log.d("URL", msg);
+
+        textView.setText(msg);
 
         BootstrapButton maemoittayo_button = (BootstrapButton)findViewById(R.id.button_maemoittayo);
         maemoittayo_button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, (int)(height*long_button_font));
@@ -112,6 +119,8 @@ public class HelpDetailActivity extends AppCompatActivity {
         maemoittayo_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(0);
                 Intent intent = new Intent(HelpDetailActivity.this, FinishAnswering.class);
                 startActivity(intent);
             }
@@ -153,13 +162,16 @@ public class HelpDetailActivity extends AppCompatActivity {
         button_wakaranai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(HelpDetailActivity.this, ConotanNoticeActivity.class);
+                HttpGetText task = new HttpGetText(HelpDetailActivity.this);
+                task.execute(1);
+                //Intent intent = new Intent(HelpDetailActivity.this, RememberActivity.class);
                 //startActivity(intent);
             }
         });
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+
 
         // The ACTION_OPEN_DOCUMENT intent was sent with the request code
         // READ_REQUEST_CODE. If the request code seen here doesn't match, it's the
@@ -181,6 +193,13 @@ public class HelpDetailActivity extends AppCompatActivity {
                         // openFileOutputはContextのメソッドなのでActivity内ならばthisでOK
                         out = this.openFileOutput("image.png", Context.MODE_PRIVATE);
                         Image.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+
+
+                        // AsyncTaskManagerに通信させる
+                        HttpImagePost task = new HttpImagePost(HelpDetailActivity.this);
+                        task.execute("data/data/com.example.allfree.conotan_bootstrap/files/image.png");
+
                     } catch (FileNotFoundException e) {
                         // エラー処理
                     } finally {

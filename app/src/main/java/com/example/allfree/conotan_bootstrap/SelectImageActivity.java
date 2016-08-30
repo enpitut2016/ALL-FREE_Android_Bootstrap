@@ -56,6 +56,7 @@ public class SelectImageActivity extends AppCompatActivity {
         InputStream input = null;
         try {
             input = this.openFileInput("image.png");
+
         } catch (FileNotFoundException e) {
             // エラー処理
         }
@@ -64,6 +65,7 @@ public class SelectImageActivity extends AppCompatActivity {
         Bitmap image = BitmapFactory.decodeStream(input);
         ImageView iv = (ImageView)findViewById(R.id.manual_image);
         iv.setImageBitmap(image);
+
 
         //送信完了画面に遷移するボタン
         BootstrapButton manual_send_button = (BootstrapButton)findViewById(R.id.manual_send);
