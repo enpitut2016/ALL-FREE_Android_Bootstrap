@@ -12,11 +12,40 @@
     tools:context="com.example.allfree.conotan_bootstrap.ManualImageActivity"
     tools:showIn="@layout/activity_manual_image">
 
-    <WebView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/webView"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="87dp" />
+        android:layout_alignBottom="@+id/sending"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1">
+
+        <WebView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/webView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="87dp" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/main"
+            app:bootstrapBrand="warning"
+            app:bootstrapText="戻る"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+
+
 </RelativeLayout>
