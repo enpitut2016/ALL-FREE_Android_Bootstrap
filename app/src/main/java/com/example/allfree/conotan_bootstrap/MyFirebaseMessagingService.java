@@ -3,6 +3,7 @@ package com.example.allfree.conotan_bootstrap;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -52,8 +53,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder builder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.icon)
-                        .setContentTitle(title)
+                        .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.icon))
                         .setContentText(bodyMsg)
                         .setContentIntent(contentIntent);
 
