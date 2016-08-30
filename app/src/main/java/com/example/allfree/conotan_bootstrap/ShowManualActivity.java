@@ -50,6 +50,5 @@ ShowManualActivity extends AppCompatActivity {
                 manualImage.setImageResource(R.drawable.map_keiro);
                 break;
         }
-        //manualTitleTv.setTextSize(30);
     }
 }
