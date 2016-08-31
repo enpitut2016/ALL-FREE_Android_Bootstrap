@@ -1,5 +1,6 @@
 package com.example.allfree.conotan_bootstrap;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -48,7 +49,18 @@ public class ManualImageActivity extends AppCompatActivity {
         WebView wv = (WebView)findViewById(R.id.webView);
         
         //リンクをタップしたときに標準ブラウザを起動させない
-        wv.setWebViewClient(new WebViewClient());
+        wv.setWebViewClient(new WebViewClient(){
+            ProgressDialog loading = new ProgressDialog(ManualImageActivity.this);
+            public void onPageFinished(final WebView view, final String url) {
+                if (loading.isShowing()) {
+                    loading.dismiss();
+                }
+            };
+
+            public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+                loading.show();
+            };
+        });
 
         //. (1) 読み込み時にページ横幅を画面幅に無理やり合わせる
         wv.getSettings().setLoadWithOverviewMode( true );
